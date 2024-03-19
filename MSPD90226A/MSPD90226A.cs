@@ -275,7 +275,7 @@ namespace CSI.GMES.PD
                     gridBand.RowCount = 2;
                     gridBand.Visible = iCol < _col_start ? false : true;
 
-                    gridBandChild = new GridBandEx() { Caption = dtSource.Columns[iCol].ColumnName.ToString().Equals("MODEL_NM") ? "Total Saved" : "" };
+                    gridBandChild = new GridBandEx() { Caption = dtSource.Columns[iCol].ColumnName.ToString().Equals("LINE_NM") ? "Total Saved" : "" };
                     gridBandChild.AppearanceHeader.Options.UseTextOptions = true;
                     gridBandChild.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
                     gridBandChild.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -389,7 +389,6 @@ namespace CSI.GMES.PD
                     string _col_nm = gvwMain.Columns[i].FieldName.ToString();
                     switch (_col_nm)
                     {
-                        case "LINE_NM":
                         case "MLINE_CD":
                         case "INPUT_PRIO":
                         case "CS_SIZE":
