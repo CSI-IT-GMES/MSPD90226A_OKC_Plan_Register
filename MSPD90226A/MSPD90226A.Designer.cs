@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSPD90226A));
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panTop = new JPlatform.Client.Controls6.PanelEx();
+            this.label1 = new System.Windows.Forms.Label();
             this.chkcboPart = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.labelEx5 = new JPlatform.Client.Controls6.LabelEx();
             this.cboStyle = new JPlatform.Client.Controls6.LookUpEditEx();
@@ -70,7 +71,6 @@
             this.repositoryItemDateEditEx6 = new JPlatform.Client.Controls6.RepositoryItemDateEditEx();
             this.repositoryItemCheckEditEx2 = new JPlatform.Client.Controls6.RepositoryItemCheckEditEx();
             this.gridViewEx3 = new JPlatform.Client.Controls6.GridViewEx();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.FormMessages)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoemComboInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BaseTextEditEx.Properties)).BeginInit();
@@ -141,6 +141,20 @@
             this.panTop.Size = new System.Drawing.Size(1329, 105);
             this.panTop.TabIndex = 25;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(203)))), ((int)(((byte)(173)))));
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(1059, 70);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 25);
+            this.label1.TabIndex = 570;
+            this.label1.Text = "Selected";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // chkcboPart
             // 
             this.chkcboPart.EditValue = "";
@@ -154,7 +168,7 @@
             this.chkcboPart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.chkcboPart.Properties.SeparatorChar = '|';
-            this.chkcboPart.Size = new System.Drawing.Size(310, 26);
+            this.chkcboPart.Size = new System.Drawing.Size(129, 26);
             this.chkcboPart.TabIndex = 569;
             // 
             // labelEx5
@@ -162,7 +176,7 @@
             this.labelEx5.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.labelEx5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelEx5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelEx5.Location = new System.Drawing.Point(486, 67);
+            this.labelEx5.Location = new System.Drawing.Point(485, 67);
             this.labelEx5.Name = "labelEx5";
             this.labelEx5.Size = new System.Drawing.Size(44, 25);
             this.labelEx5.TabIndex = 566;
@@ -171,7 +185,7 @@
             // cboStyle
             // 
             this.cboStyle.ControlValue = null;
-            this.cboStyle.Location = new System.Drawing.Point(86, 67);
+            this.cboStyle.Location = new System.Drawing.Point(326, 68);
             this.cboStyle.Name = "cboStyle";
             this.cboStyle.Properties.AddEmptyRow = false;
             this.cboStyle.Properties.AllowBlank = false;
@@ -184,7 +198,7 @@
             this.cboStyle.Properties.ShowCodeColumn = false;
             this.cboStyle.Properties.WordID = "W2018061910540582403";
             this.cboStyle.Properties.WordText = "FA_WC_CD";
-            this.cboStyle.Size = new System.Drawing.Size(370, 25);
+            this.cboStyle.Size = new System.Drawing.Size(130, 25);
             this.cboStyle.TabIndex = 564;
             this.cboStyle.EditValueChanged += new System.EventHandler(this.cboStyle_EditValueChanged);
             // 
@@ -193,16 +207,16 @@
             this.labelEx4.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.labelEx4.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelEx4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelEx4.Location = new System.Drawing.Point(32, 67);
+            this.labelEx4.Location = new System.Drawing.Point(223, 68);
             this.labelEx4.Name = "labelEx4";
-            this.labelEx4.Size = new System.Drawing.Size(53, 25);
+            this.labelEx4.Size = new System.Drawing.Size(102, 25);
             this.labelEx4.TabIndex = 563;
-            this.labelEx4.Text = "Style";
+            this.labelEx4.Text = "Style Code";
             // 
             // cboHMS
             // 
             this.cboHMS.ControlValue = null;
-            this.cboHMS.Location = new System.Drawing.Point(711, 37);
+            this.cboHMS.Location = new System.Drawing.Point(87, 69);
             this.cboHMS.Name = "cboHMS";
             this.cboHMS.Properties.AddEmptyRow = false;
             this.cboHMS.Properties.AllowBlank = false;
@@ -223,9 +237,9 @@
             this.labelEx3.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.labelEx3.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.labelEx3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelEx3.Location = new System.Drawing.Point(665, 37);
+            this.labelEx3.Location = new System.Drawing.Point(22, 69);
             this.labelEx3.Name = "labelEx3";
-            this.labelEx3.Size = new System.Drawing.Size(44, 25);
+            this.labelEx3.Size = new System.Drawing.Size(63, 25);
             this.labelEx3.TabIndex = 561;
             this.labelEx3.Text = "Hour";
             // 
@@ -362,7 +376,7 @@
             this.cboAssDate.Properties.AppearanceDropDown.Options.UseFont = true;
             this.cboAssDate.Properties.BeforeEditValue = null;
             this.cboAssDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 20, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("resource.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 20, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("resource.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, true)});
             this.cboAssDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cboAssDate.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
@@ -429,7 +443,7 @@
             this.cboWorkDate.Properties.AppearanceDropDown.Options.UseFont = true;
             this.cboWorkDate.Properties.BeforeEditValue = new System.DateTime(2022, 8, 1, 15, 33, 39, 547);
             this.cboWorkDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 20, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("resource.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 20, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("resource.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, true)});
             this.cboWorkDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cboWorkDate.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
@@ -611,20 +625,6 @@
             this.gridViewEx3.ActionMode = JPlatform.Client.Controls6.ActionMode.View;
             this.gridViewEx3.GridControl = this.grdMain;
             this.gridViewEx3.Name = "gridViewEx3";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(203)))), ((int)(((byte)(173)))));
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(1059, 70);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 25);
-            this.label1.TabIndex = 570;
-            this.label1.Text = "Selected";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MSPD90226A
             // 
