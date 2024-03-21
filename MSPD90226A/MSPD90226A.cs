@@ -116,7 +116,7 @@ namespace CSI.GMES.PD
 
                     if(_dtSource != null && _dtSource.Rows.Count > 0)
                     {
-                        DataTable _dtContent = _dtSource.Select("CS_SIZE <> 'G-TOTAL'", "MLINE_CD, INPUT_PRIO, STYLE_CD, GRP_NO").CopyToDataTable();
+                        DataTable _dtContent = _dtSource.Select("CS_SIZE <> 'G-TOTAL'", "MLINE_CD, ASY_YMD, STYLE_CD, GRP_NO").CopyToDataTable();
                         DataTable _dtHead = _dtSource.Select("CS_SIZE = 'G-TOTAL'", "ORD").CopyToDataTable();
                         CreateSizeGrid(grdConfirm, gvwConfirm, _dtContent, _dtHead);
                         DataTable _dtf = Binding_Data(_dtContent, gvwConfirm);
@@ -237,10 +237,18 @@ namespace CSI.GMES.PD
                         _dtf.Rows[_dtf.Rows.Count - 1]["LINE_CD"] = dtSource.Rows[iRow]["LINE_CD"].ToString();
                         _dtf.Rows[_dtf.Rows.Count - 1]["LINE_NM"] = dtSource.Rows[iRow]["LINE_NM"].ToString();
                         _dtf.Rows[_dtf.Rows.Count - 1]["MLINE_CD"] = dtSource.Rows[iRow]["MLINE_CD"].ToString();
-                        _dtf.Rows[_dtf.Rows.Count - 1]["INPUT_PRIO"] = dtSource.Rows[iRow]["INPUT_PRIO"].ToString();
                         _dtf.Rows[_dtf.Rows.Count - 1]["MODEL_NM"] = dtSource.Rows[iRow]["MODEL_NM"].ToString();
                         _dtf.Rows[_dtf.Rows.Count - 1]["STYLE_CD"] = dtSource.Rows[iRow]["STYLE_CD"].ToString();
                         _dtf.Rows[_dtf.Rows.Count - 1]["CS_SIZE"] = dtSource.Rows[iRow]["CS_SIZE"].ToString();
+
+                        if (_tab == 0)
+                        {
+                            _dtf.Rows[_dtf.Rows.Count - 1]["INPUT_PRIO"] = dtSource.Rows[iRow]["INPUT_PRIO"].ToString();
+                        }
+                        else if(_tab == 1)
+                        {
+                            _dtf.Rows[_dtf.Rows.Count - 1]["ASY_YMD"] = dtSource.Rows[iRow]["ASY_YMD"].ToString();
+                        }
 
                         _distinct_row = dtSource.Rows[iRow]["DISTINCT_ROW"].ToString();
                     }
@@ -388,6 +396,9 @@ namespace CSI.GMES.PD
                     break;
                 case "CS_SIZE":
                     _result = "Size";
+                    break;
+                case "ASY_YMD":
+                    _result = "Assembly Date";
                     break;
                 default:
                     break;
@@ -550,14 +561,26 @@ namespace CSI.GMES.PD
 
         private void InitCombobox()
         {
-            LoadDataCbo(cboFactory, "Factory", "Q_FTY");
-            LoadDataCbo(cboPlant, "Plant", "Q_PLANT");
-            LoadDataCbo(cboLine, "Line", "Q_LINE");
+            if (_tab == 0)
+            {
+                LoadDataCbo(cboFactory, "Factory", "Q_FTY");
+                LoadDataCbo(cboPlant, "Plant", "Q_PLANT");
+                LoadDataCbo(cboLine, "Line", "Q_LINE");
 
-            LoadDataCbo(cboHMS, "Hour", "Q_HMS");
-            LoadDataCbo(cboMachine, "Machine", "Q_MACHINE");
-            LoadDataCbo(cboStyle, "Style Name", "Q_STYLE");
-            LoadDataCbo(null, "Part", "Q_PART");
+                LoadDataCbo(cboHMS, "Hour", "Q_HMS");
+                LoadDataCbo(cboMachine, "Machine", "Q_MACHINE");
+                LoadDataCbo(cboStyle, "Style Name", "Q_STYLE");
+                LoadDataCbo(null, "Part", "Q_PART");
+            }
+            else if (_tab == 1)
+            {
+                LoadDataCbo(cboPlant, "Plant", "Q_PLANT_ALL");
+                LoadDataCbo(cboLine, "Line", "Q_LINE_ALL");
+
+                LoadDataCbo(cboHMS, "Hour", "Q_HMS_ALL");
+                LoadDataCbo(cboMachine, "Machine", "Q_MACHINE");
+                LoadDataCbo(cboStyle, "Style Name", "Q_STYLE_ALL");
+            }
         }
 
         private void LoadDataCbo(LookUpEditEx argCbo, string _cbo_nm, string _type, string _search = "")
@@ -600,7 +623,7 @@ namespace CSI.GMES.PD
                     argCbo.Properties.DisplayMember = columnName;
                     argCbo.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo(columnCode));
                     argCbo.Properties.Columns.Add(new DevExpress.XtraEditors.Controls.LookUpColumnInfo(columnName));
-                    argCbo.Properties.Columns[columnCode].Visible = _type.Equals("Q_STYLE") ? true : false;
+                    argCbo.Properties.Columns[columnCode].Visible = _type.Contains("Q_STYLE") ? true : false;
                     argCbo.Properties.Columns[columnCode].Width = 10;
                     argCbo.Properties.Columns[columnCode].Caption = captionCode;
                     argCbo.Properties.Columns[columnName].Caption = captionName;
@@ -625,8 +648,9 @@ namespace CSI.GMES.PD
                 string _mline = string.IsNullOrEmpty(cboLine.EditValue.ToString()) ? "" : cboLine.EditValue.ToString();
                 string _style = string.IsNullOrEmpty(cboStyle.EditValue.ToString()) ? "" : cboStyle.EditValue.ToString();
                 string _hms = string.IsNullOrEmpty(cboHMS.EditValue.ToString()) ? "" : cboHMS.EditValue.ToString();
+                string _machine = string.IsNullOrEmpty(cboMachine.EditValue.ToString()) ? "" : cboMachine.EditValue.ToString();
 
-                dtData = proc.SetParamData(dtData, _type, _factory, _line, _mline, _style, "", cboAssDate.yyyymmdd, _hms);
+                dtData = proc.SetParamData(dtData, _type, _factory, _line, _mline, _style, cboWorkDate.yyyymmdd, cboAssDate.yyyymmdd, _hms, _machine);
                 ResultSet rs = CommonCallQuery(dtData, proc.ProcName, proc.GetParamInfo(), false, 90000, "", true);
 
                 if (rs == null || rs.ResultDataSet == null || rs.ResultDataSet.Tables.Count == 0 || rs.ResultDataSet.Tables[0].Rows.Count == 0)
@@ -754,7 +778,7 @@ namespace CSI.GMES.PD
                     }
                 }
 
-                if (e.Column.FieldName.ToString().Equals("INPUT_PRIO"))
+                if (e.Column.FieldName.ToString().Equals("ASY_YMD"))
                 {
                     string _value1 = gvwConfirm.GetRowCellValue(e.RowHandle1, "LINE_NM").ToString();
                     string _value2 = gvwConfirm.GetRowCellValue(e.RowHandle2, "LINE_NM").ToString();
@@ -777,8 +801,8 @@ namespace CSI.GMES.PD
                     string _value2 = gvwConfirm.GetRowCellValue(e.RowHandle2, "LINE_NM").ToString();
                     string _value3 = gvwConfirm.GetRowCellValue(e.RowHandle1, "MLINE_CD").ToString();
                     string _value4 = gvwConfirm.GetRowCellValue(e.RowHandle2, "MLINE_CD").ToString();
-                    string _value5 = gvwConfirm.GetRowCellValue(e.RowHandle1, "INPUT_PRIO").ToString();
-                    string _value6 = gvwConfirm.GetRowCellValue(e.RowHandle2, "INPUT_PRIO").ToString();
+                    string _value5 = gvwConfirm.GetRowCellValue(e.RowHandle1, "ASY_YMD").ToString();
+                    string _value6 = gvwConfirm.GetRowCellValue(e.RowHandle2, "ASY_YMD").ToString();
                     string _value7 = gvwConfirm.GetRowCellValue(e.RowHandle1, e.Column.FieldName.ToString()).ToString();
                     string _value8 = gvwConfirm.GetRowCellValue(e.RowHandle2, e.Column.FieldName.ToString()).ToString();
 
@@ -798,7 +822,14 @@ namespace CSI.GMES.PD
         {
             if (!_firstLoad)
             {
-                LoadDataCbo(cboPlant, "Plant", "Q_PLANT");
+                if (_tab == 0)
+                {
+                    LoadDataCbo(cboPlant, "Plant", "Q_PLANT");
+                }
+                else if(_tab == 1)
+                {
+                    LoadDataCbo(cboPlant, "Plant", "Q_PLANT_ALL");
+                }
             }
         }
 
@@ -806,9 +837,18 @@ namespace CSI.GMES.PD
         {
             if (!_firstLoad)
             {
-                LoadDataCbo(cboLine, "Line", "Q_LINE");
-                LoadDataCbo(cboStyle, "Style Name", "Q_STYLE");
-                LoadDataCbo(null, "Part", "Q_PART");
+                if (_tab == 0)
+                {
+                    LoadDataCbo(cboLine, "Line", "Q_LINE");
+                    LoadDataCbo(cboStyle, "Style Name", "Q_STYLE");
+                    LoadDataCbo(null, "Part", "Q_PART");
+                }
+                else if(_tab == 1)
+                {
+                    LoadDataCbo(cboLine, "Line", "Q_LINE_ALL");
+                    LoadDataCbo(cboMachine, "Machine", "Q_MACHINE");
+                    LoadDataCbo(cboStyle, "Style Name", "Q_STYLE_ALL");
+                }
             }
         }
 
@@ -816,9 +856,17 @@ namespace CSI.GMES.PD
         {
             if (!_firstLoad)
             {
-                LoadDataCbo(cboMachine, "Machine", "Q_MACHINE");
-                LoadDataCbo(cboStyle, "Style Name", "Q_STYLE");
-                LoadDataCbo(null, "Part", "Q_PART");
+                if (_tab == 0)
+                {
+                    LoadDataCbo(cboMachine, "Machine", "Q_MACHINE");
+                    LoadDataCbo(cboStyle, "Style Name", "Q_STYLE");
+                    LoadDataCbo(null, "Part", "Q_PART");
+                }
+                else if(_tab == 1)
+                {
+                    LoadDataCbo(cboMachine, "Machine", "Q_MACHINE");
+                    LoadDataCbo(cboStyle, "Style Name", "Q_STYLE_ALL");
+                }
             }
         }
 
@@ -835,7 +883,33 @@ namespace CSI.GMES.PD
         {
             if (!_firstLoad)
             {
-                LoadDataCbo(null, "Part", "Q_PART");
+                if (_tab == 0)
+                {
+                    LoadDataCbo(null, "Part", "Q_PART");
+                }
+            }
+        }
+
+
+        private void cboWorkDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (!_firstLoad)
+            {
+                if (_tab == 1)
+                {
+                    LoadDataCbo(cboStyle, "Style Name", "Q_STYLE_ALL");
+                }
+            }
+        }
+
+        private void cboMachine_EditValueChanged(object sender, EventArgs e)
+        {
+            if (!_firstLoad)
+            {
+                if (_tab == 1)
+                {
+                    LoadDataCbo(cboStyle, "Style Name", "Q_STYLE_ALL");
+                }
             }
         }
 
@@ -881,6 +955,14 @@ namespace CSI.GMES.PD
                     {
                         e.Appearance.BackColor = Color.FromArgb(224, 255, 255);
                         e.Appearance.ForeColor = Color.Blue;
+                    }
+                }
+
+                if (!e.Column.FieldName.ToString().Equals("LINE_NM"))
+                {
+                    if (gvwConfirm.GetRowCellValue(e.RowHandle, "MLINE_CD").ToString().ToUpper().Equals("S.TOTAL"))
+                    {
+                        e.Appearance.BackColor = Color.FromArgb(255, 219, 201);
                     }
                 }
             }
@@ -1002,7 +1084,7 @@ namespace CSI.GMES.PD
 
                 if (e.Column.FieldName.ToString().Equals("CS_SIZE"))
                 {
-                    if (e.CellValue.ToString().ToUpper().Equals("TOTAL"))
+                    if (e.CellValue.ToString().ToUpper().Contains("TOTAL"))
                     {
                         e.DisplayText = "";
                     }
@@ -1177,14 +1259,52 @@ namespace CSI.GMES.PD
             {
                 chkcboPart.Visible = false;
                 lbPart.Visible = false;
-                cboStyle.Width = 334;
+                cboStyle.Width = 329;
+                lblSave.Visible = false;
+                lblSelect.Visible = false;
+                lblAssDate.Visible = false;
+                cboAssDate.Visible = false;
+
+                cboHMS.Location = new Point(286, 37);
+                lblHMS.Location = new Point(222, 37);
+
+                lblStyle.Location = new Point(22, 69);
+                cboStyle.Location = new Point(87, 69);
+
+                lblPlant.Location = new Point(237, 7);
+                cboPlant.Location = new Point(286, 7);
+                lblLine.Location = new Point(449, 7);
+                cboLine.Location = new Point(490, 7);
+                lblMachine.Location = new Point(419, 37);
+                cboMachine.Location = new Point(490, 37);
             }
-            else
+            else if (_tab == 0)
             {
                 chkcboPart.Visible = true;
                 lbPart.Visible = true;
                 cboStyle.Width = 130;
+                lblSave.Visible = true;
+                lblSelect.Visible = true;
+                lblAssDate.Visible = true;
+                cboAssDate.Visible = true;
+
+                cboHMS.Location = new Point(87, 69);
+                lblHMS.Location = new Point(22, 69);
+
+                lblStyle.Location = new Point(223, 68);
+                cboStyle.Location = new Point(326, 68);
+
+                lblPlant.Location = new Point(277, 7);
+                cboPlant.Location = new Point(326, 7);
+                lblLine.Location = new Point(489, 7);
+                cboLine.Location = new Point(530, 7);
+                lblMachine.Location = new Point(459, 37);
+                cboMachine.Location = new Point(530, 37);
             }
+
+            _firstLoad = true;
+            InitCombobox();
+            _firstLoad = false;
         }
 
         #endregion
@@ -1268,6 +1388,7 @@ namespace CSI.GMES.PD
                 _ParamInfo.Add(new ParamInfo("@ARG_DATE", "Varchar", 100, "Input", typeof(System.String)));
                 _ParamInfo.Add(new ParamInfo("@ARG_ASS_DATE", "Varchar", 100, "Input", typeof(System.String)));
                 _ParamInfo.Add(new ParamInfo("@ARG_HMS", "Varchar", 100, "Input", typeof(System.String)));
+                _ParamInfo.Add(new ParamInfo("@ARG_MACHINE", "Varchar", 100, "Input", typeof(System.String)));
             }
             public DataTable SetParamData(DataTable dataTable,
                                         System.String ARG_WORK_TYPE,
@@ -1277,7 +1398,8 @@ namespace CSI.GMES.PD
                                         System.String ARG_STYLE,
                                         System.String ARG_DATE,
                                         System.String ARG_ASS_DATE,
-                                        System.String ARG_HMS)
+                                        System.String ARG_HMS,
+                                        System.String ARG_MACHINE)
             {
                 if (dataTable == null)
                 {
@@ -1296,7 +1418,8 @@ namespace CSI.GMES.PD
                     ARG_STYLE,
                     ARG_DATE,
                     ARG_ASS_DATE,
-                    ARG_HMS
+                    ARG_HMS,
+                    ARG_MACHINE
                 };
                 dataTable.Rows.Add(objData);
                 return dataTable;
