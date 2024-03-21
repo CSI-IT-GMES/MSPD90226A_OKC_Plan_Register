@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSPD90226A));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panTop = new JPlatform.Client.Controls6.PanelEx();
             this.label1 = new System.Windows.Forms.Label();
             this.chkcboPart = new DevExpress.XtraEditors.CheckedComboBoxEdit();
-            this.labelEx5 = new JPlatform.Client.Controls6.LabelEx();
+            this.lbPart = new JPlatform.Client.Controls6.LabelEx();
             this.cboStyle = new JPlatform.Client.Controls6.LookUpEditEx();
             this.labelEx4 = new JPlatform.Client.Controls6.LabelEx();
             this.cboHMS = new JPlatform.Client.Controls6.LookUpEditEx();
@@ -60,6 +60,9 @@
             this.cboWorkDate = new JPlatform.Client.Controls6.DateEditEx();
             this.panBase = new JPlatform.Client.Controls6.PanelEx();
             this.pnMain = new System.Windows.Forms.Panel();
+            this.tabControl = new DevExpress.XtraTab.XtraTabControl();
+            this.tabSummary = new DevExpress.XtraTab.XtraTabPage();
+            this.pnSummary = new JPlatform.Client.Controls6.PanelEx();
             this.grdMain = new JPlatform.Client.Controls6.GridControlEx();
             this.gvwMain = new JPlatform.Client.Controls6.BandedGridViewEx();
             this.repositoryItemSpinEditEx5 = new JPlatform.Client.Controls6.RepositoryItemSpinEditEx();
@@ -71,6 +74,19 @@
             this.repositoryItemDateEditEx6 = new JPlatform.Client.Controls6.RepositoryItemDateEditEx();
             this.repositoryItemCheckEditEx2 = new JPlatform.Client.Controls6.RepositoryItemCheckEditEx();
             this.gridViewEx3 = new JPlatform.Client.Controls6.GridViewEx();
+            this.tabCTP_Detail = new DevExpress.XtraTab.XtraTabPage();
+            this.pnDetail = new System.Windows.Forms.Panel();
+            this.grdConfirm = new JPlatform.Client.Controls6.GridControlEx();
+            this.gvwConfirm = new JPlatform.Client.Controls6.BandedGridViewEx();
+            this.repositoryItemSpinEditEx1 = new JPlatform.Client.Controls6.RepositoryItemSpinEditEx();
+            this.repositoryItemSpinEditEx2 = new JPlatform.Client.Controls6.RepositoryItemSpinEditEx();
+            this.repositoryItemSpinEditEx3 = new JPlatform.Client.Controls6.RepositoryItemSpinEditEx();
+            this.repositoryItemSpinEditEx4 = new JPlatform.Client.Controls6.RepositoryItemSpinEditEx();
+            this.repositoryItemDateEditEx1 = new JPlatform.Client.Controls6.RepositoryItemDateEditEx();
+            this.repositoryItemDateEditEx2 = new JPlatform.Client.Controls6.RepositoryItemDateEditEx();
+            this.repositoryItemDateEditEx3 = new JPlatform.Client.Controls6.RepositoryItemDateEditEx();
+            this.repositoryItemCheckEditEx1 = new JPlatform.Client.Controls6.RepositoryItemCheckEditEx();
+            this.gridViewEx1 = new JPlatform.Client.Controls6.GridViewEx();
             ((System.ComponentModel.ISupportInitialize)(this.FormMessages)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoemComboInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BaseTextEditEx.Properties)).BeginInit();
@@ -90,6 +106,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.panBase)).BeginInit();
             this.panBase.SuspendLayout();
             this.pnMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl)).BeginInit();
+            this.tabControl.SuspendLayout();
+            this.tabSummary.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pnSummary)).BeginInit();
+            this.pnSummary.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwMain)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEditEx5)).BeginInit();
@@ -104,6 +125,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditEx6.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditEx2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewEx3)).BeginInit();
+            this.tabCTP_Detail.SuspendLayout();
+            this.pnDetail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdConfirm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvwConfirm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEditEx1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEditEx2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEditEx3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEditEx4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditEx1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditEx1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditEx2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditEx2.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditEx3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditEx3.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditEx1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewEx1)).BeginInit();
             this.SuspendLayout();
             // 
             // BaseTextEditEx
@@ -116,7 +153,7 @@
             this.panTop.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.panTop.Controls.Add(this.label1);
             this.panTop.Controls.Add(this.chkcboPart);
-            this.panTop.Controls.Add(this.labelEx5);
+            this.panTop.Controls.Add(this.lbPart);
             this.panTop.Controls.Add(this.cboStyle);
             this.panTop.Controls.Add(this.labelEx4);
             this.panTop.Controls.Add(this.cboHMS);
@@ -171,16 +208,16 @@
             this.chkcboPart.Size = new System.Drawing.Size(129, 26);
             this.chkcboPart.TabIndex = 569;
             // 
-            // labelEx5
+            // lbPart
             // 
-            this.labelEx5.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
-            this.labelEx5.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelEx5.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelEx5.Location = new System.Drawing.Point(485, 67);
-            this.labelEx5.Name = "labelEx5";
-            this.labelEx5.Size = new System.Drawing.Size(44, 25);
-            this.labelEx5.TabIndex = 566;
-            this.labelEx5.Text = "Part";
+            this.lbPart.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
+            this.lbPart.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lbPart.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lbPart.Location = new System.Drawing.Point(485, 67);
+            this.lbPart.Name = "lbPart";
+            this.lbPart.Size = new System.Drawing.Size(44, 25);
+            this.lbPart.TabIndex = 566;
+            this.lbPart.Text = "Part";
             // 
             // cboStyle
             // 
@@ -376,7 +413,7 @@
             this.cboAssDate.Properties.AppearanceDropDown.Options.UseFont = true;
             this.cboAssDate.Properties.BeforeEditValue = null;
             this.cboAssDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 20, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("resource.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 20, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("resource.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, true)});
             this.cboAssDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cboAssDate.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
@@ -443,7 +480,7 @@
             this.cboWorkDate.Properties.AppearanceDropDown.Options.UseFont = true;
             this.cboWorkDate.Properties.BeforeEditValue = new System.DateTime(2022, 8, 1, 15, 33, 39, 547);
             this.cboWorkDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 20, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("resource.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 20, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("resource.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, true)});
             this.cboWorkDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cboWorkDate.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
@@ -463,12 +500,49 @@
             // 
             // pnMain
             // 
-            this.pnMain.Controls.Add(this.grdMain);
+            this.pnMain.Controls.Add(this.tabControl);
             this.pnMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnMain.Location = new System.Drawing.Point(2, 107);
             this.pnMain.Name = "pnMain";
             this.pnMain.Size = new System.Drawing.Size(1329, 392);
             this.pnMain.TabIndex = 521;
+            // 
+            // tabControl
+            // 
+            this.tabControl.AppearancePage.Header.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.tabControl.AppearancePage.Header.Options.UseFont = true;
+            this.tabControl.AppearancePage.HeaderActive.Font = new System.Drawing.Font("Calibri", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.tabControl.AppearancePage.HeaderActive.Options.UseFont = true;
+            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl.Location = new System.Drawing.Point(0, 0);
+            this.tabControl.LookAndFeel.SkinName = "VS2010";
+            this.tabControl.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.tabControl.Name = "tabControl";
+            this.tabControl.PaintStyleName = "PropertyView";
+            this.tabControl.SelectedTabPage = this.tabSummary;
+            this.tabControl.Size = new System.Drawing.Size(1329, 392);
+            this.tabControl.TabIndex = 55;
+            this.tabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabSummary,
+            this.tabCTP_Detail});
+            this.tabControl.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.tabControl_SelectedPageChanged);
+            // 
+            // tabSummary
+            // 
+            this.tabSummary.Controls.Add(this.pnSummary);
+            this.tabSummary.Name = "tabSummary";
+            this.tabSummary.Size = new System.Drawing.Size(1327, 348);
+            this.tabSummary.Text = "Registration  ";
+            // 
+            // pnSummary
+            // 
+            this.pnSummary.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.pnSummary.Controls.Add(this.grdMain);
+            this.pnSummary.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnSummary.Location = new System.Drawing.Point(0, 0);
+            this.pnSummary.Name = "pnSummary";
+            this.pnSummary.Size = new System.Drawing.Size(1327, 348);
+            this.pnSummary.TabIndex = 8;
             // 
             // grdMain
             // 
@@ -485,7 +559,7 @@
             this.repositoryItemDateEditEx5,
             this.repositoryItemDateEditEx6,
             this.repositoryItemCheckEditEx2});
-            this.grdMain.Size = new System.Drawing.Size(1329, 392);
+            this.grdMain.Size = new System.Drawing.Size(1327, 348);
             this.grdMain.TabIndex = 519;
             this.grdMain.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvwMain,
@@ -626,6 +700,174 @@
             this.gridViewEx3.GridControl = this.grdMain;
             this.gridViewEx3.Name = "gridViewEx3";
             // 
+            // tabCTP_Detail
+            // 
+            this.tabCTP_Detail.Controls.Add(this.pnDetail);
+            this.tabCTP_Detail.Name = "tabCTP_Detail";
+            this.tabCTP_Detail.Size = new System.Drawing.Size(1327, 348);
+            this.tabCTP_Detail.Text = "Plan Confirmation  ";
+            // 
+            // pnDetail
+            // 
+            this.pnDetail.Controls.Add(this.grdConfirm);
+            this.pnDetail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnDetail.Location = new System.Drawing.Point(0, 0);
+            this.pnDetail.Name = "pnDetail";
+            this.pnDetail.Size = new System.Drawing.Size(1327, 348);
+            this.pnDetail.TabIndex = 0;
+            // 
+            // grdConfirm
+            // 
+            this.grdConfirm.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grdConfirm.Location = new System.Drawing.Point(0, 0);
+            this.grdConfirm.MainView = this.gvwConfirm;
+            this.grdConfirm.Name = "grdConfirm";
+            this.grdConfirm.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemSpinEditEx1,
+            this.repositoryItemSpinEditEx2,
+            this.repositoryItemSpinEditEx3,
+            this.repositoryItemSpinEditEx4,
+            this.repositoryItemDateEditEx1,
+            this.repositoryItemDateEditEx2,
+            this.repositoryItemDateEditEx3,
+            this.repositoryItemCheckEditEx1});
+            this.grdConfirm.Size = new System.Drawing.Size(1327, 348);
+            this.grdConfirm.TabIndex = 520;
+            this.grdConfirm.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvwConfirm,
+            this.gridViewEx1});
+            // 
+            // gvwConfirm
+            // 
+            this.gvwConfirm.ActionMode = JPlatform.Client.Controls6.ActionMode.Save;
+            this.gvwConfirm.Appearance.BandPanelBackground.Options.UseBackColor = true;
+            this.gvwConfirm.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.gvwConfirm.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvwConfirm.BandPanelRowHeight = 30;
+            this.gvwConfirm.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.gvwConfirm.GridControl = this.grdConfirm;
+            this.gvwConfirm.Name = "gvwConfirm";
+            this.gvwConfirm.OptionsCustomization.AllowBandMoving = false;
+            this.gvwConfirm.OptionsCustomization.AllowColumnMoving = false;
+            this.gvwConfirm.OptionsCustomization.AllowGroup = false;
+            this.gvwConfirm.OptionsCustomization.AllowSort = false;
+            this.gvwConfirm.OptionsPrint.PrintHeader = false;
+            this.gvwConfirm.OptionsSelection.MultiSelect = true;
+            this.gvwConfirm.OptionsView.AllowCellMerge = true;
+            this.gvwConfirm.OptionsView.ColumnAutoWidth = false;
+            this.gvwConfirm.OptionsView.ShowColumnHeaders = false;
+            this.gvwConfirm.OptionsView.ShowGroupPanel = false;
+            this.gvwConfirm.OptionsView.ShowHorizontalLines = DevExpress.Utils.DefaultBoolean.True;
+            this.gvwConfirm.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.True;
+            this.gvwConfirm.SaveSPName = null;
+            this.gvwConfirm.ViewSPName = null;
+            this.gvwConfirm.CustomDrawBandHeader += new DevExpress.XtraGrid.Views.BandedGrid.BandHeaderCustomDrawEventHandler(this.gvwMain_CustomDrawBandHeader);
+            this.gvwConfirm.CellMerge += new DevExpress.XtraGrid.Views.Grid.CellMergeEventHandler(this.gvwConfirm_CellMerge);
+            this.gvwConfirm.CustomDrawCell += new DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventHandler(this.gvwConfirm_CustomDrawCell);
+            this.gvwConfirm.RowCellStyle += new DevExpress.XtraGrid.Views.Grid.RowCellStyleEventHandler(this.gvwConfirm_RowCellStyle);
+            // 
+            // repositoryItemSpinEditEx1
+            // 
+            this.repositoryItemSpinEditEx1.IsFloatValue = true;
+            this.repositoryItemSpinEditEx1.MaxOption = "<=";
+            this.repositoryItemSpinEditEx1.MaxValue = new decimal(new int[] {
+            -1486618624,
+            232830643,
+            0,
+            0});
+            this.repositoryItemSpinEditEx1.MinValue = new decimal(new int[] {
+            -1486618624,
+            232830643,
+            0,
+            -2147483648});
+            this.repositoryItemSpinEditEx1.Name = "repositoryItemSpinEditEx1";
+            // 
+            // repositoryItemSpinEditEx2
+            // 
+            this.repositoryItemSpinEditEx2.IsFloatValue = true;
+            this.repositoryItemSpinEditEx2.MaxOption = "<=";
+            this.repositoryItemSpinEditEx2.MaxValue = new decimal(new int[] {
+            -1486618624,
+            232830643,
+            0,
+            0});
+            this.repositoryItemSpinEditEx2.MinValue = new decimal(new int[] {
+            -1486618624,
+            232830643,
+            0,
+            -2147483648});
+            this.repositoryItemSpinEditEx2.Name = "repositoryItemSpinEditEx2";
+            // 
+            // repositoryItemSpinEditEx3
+            // 
+            this.repositoryItemSpinEditEx3.IsFloatValue = true;
+            this.repositoryItemSpinEditEx3.MaxOption = "<=";
+            this.repositoryItemSpinEditEx3.MaxValue = new decimal(new int[] {
+            -1486618624,
+            232830643,
+            0,
+            0});
+            this.repositoryItemSpinEditEx3.MinValue = new decimal(new int[] {
+            -1486618624,
+            232830643,
+            0,
+            -2147483648});
+            this.repositoryItemSpinEditEx3.Name = "repositoryItemSpinEditEx3";
+            // 
+            // repositoryItemSpinEditEx4
+            // 
+            this.repositoryItemSpinEditEx4.IsFloatValue = true;
+            this.repositoryItemSpinEditEx4.MaxOption = "<=";
+            this.repositoryItemSpinEditEx4.MaxValue = new decimal(new int[] {
+            -1486618624,
+            232830643,
+            0,
+            0});
+            this.repositoryItemSpinEditEx4.MinValue = new decimal(new int[] {
+            -1486618624,
+            232830643,
+            0,
+            -2147483648});
+            this.repositoryItemSpinEditEx4.Name = "repositoryItemSpinEditEx4";
+            // 
+            // repositoryItemDateEditEx1
+            // 
+            this.repositoryItemDateEditEx1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEditEx1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEditEx1.Name = "repositoryItemDateEditEx1";
+            // 
+            // repositoryItemDateEditEx2
+            // 
+            this.repositoryItemDateEditEx2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEditEx2.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEditEx2.Name = "repositoryItemDateEditEx2";
+            // 
+            // repositoryItemDateEditEx3
+            // 
+            this.repositoryItemDateEditEx3.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEditEx3.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEditEx3.Name = "repositoryItemDateEditEx3";
+            // 
+            // repositoryItemCheckEditEx1
+            // 
+            this.repositoryItemCheckEditEx1.Caption = "CheckColumnEdit";
+            this.repositoryItemCheckEditEx1.Name = "repositoryItemCheckEditEx1";
+            this.repositoryItemCheckEditEx1.ValueChecked = "Y";
+            this.repositoryItemCheckEditEx1.ValueGrayed = "N";
+            this.repositoryItemCheckEditEx1.ValueUnchecked = "N";
+            // 
+            // gridViewEx1
+            // 
+            this.gridViewEx1.ActionMode = JPlatform.Client.Controls6.ActionMode.View;
+            this.gridViewEx1.GridControl = this.grdConfirm;
+            this.gridViewEx1.Name = "gridViewEx1";
+            // 
             // MSPD90226A
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -655,6 +897,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.panBase)).EndInit();
             this.panBase.ResumeLayout(false);
             this.pnMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabControl)).EndInit();
+            this.tabControl.ResumeLayout(false);
+            this.tabSummary.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pnSummary)).EndInit();
+            this.pnSummary.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grdMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvwMain)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEditEx5)).EndInit();
@@ -669,6 +916,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditEx6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditEx2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewEx3)).EndInit();
+            this.tabCTP_Detail.ResumeLayout(false);
+            this.pnDetail.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdConfirm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvwConfirm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEditEx1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEditEx2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEditEx3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEditEx4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditEx1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditEx1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditEx2.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditEx2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditEx3.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEditEx3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditEx1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewEx1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -686,7 +949,7 @@
         private JPlatform.Client.Controls6.LookUpEditEx cboFactory;
         private System.Windows.Forms.Label lblGreen;
         private System.Windows.Forms.Panel pnMain;
-        private JPlatform.Client.Controls6.LabelEx labelEx5;
+        private JPlatform.Client.Controls6.LabelEx lbPart;
         private JPlatform.Client.Controls6.LookUpEditEx cboStyle;
         private JPlatform.Client.Controls6.LabelEx labelEx4;
         private JPlatform.Client.Controls6.LookUpEditEx cboHMS;
@@ -708,6 +971,22 @@
         private JPlatform.Client.Controls6.RepositoryItemCheckEditEx repositoryItemCheckEditEx2;
         private JPlatform.Client.Controls6.GridViewEx gridViewEx3;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraTab.XtraTabControl tabControl;
+        private DevExpress.XtraTab.XtraTabPage tabSummary;
+        private JPlatform.Client.Controls6.PanelEx pnSummary;
+        private DevExpress.XtraTab.XtraTabPage tabCTP_Detail;
+        private System.Windows.Forms.Panel pnDetail;
+        private JPlatform.Client.Controls6.GridControlEx grdConfirm;
+        private JPlatform.Client.Controls6.BandedGridViewEx gvwConfirm;
+        private JPlatform.Client.Controls6.RepositoryItemSpinEditEx repositoryItemSpinEditEx1;
+        private JPlatform.Client.Controls6.RepositoryItemSpinEditEx repositoryItemSpinEditEx2;
+        private JPlatform.Client.Controls6.RepositoryItemSpinEditEx repositoryItemSpinEditEx3;
+        private JPlatform.Client.Controls6.RepositoryItemSpinEditEx repositoryItemSpinEditEx4;
+        private JPlatform.Client.Controls6.RepositoryItemDateEditEx repositoryItemDateEditEx1;
+        private JPlatform.Client.Controls6.RepositoryItemDateEditEx repositoryItemDateEditEx2;
+        private JPlatform.Client.Controls6.RepositoryItemDateEditEx repositoryItemDateEditEx3;
+        private JPlatform.Client.Controls6.RepositoryItemCheckEditEx repositoryItemCheckEditEx1;
+        private JPlatform.Client.Controls6.GridViewEx gridViewEx1;
     }
 }
 
