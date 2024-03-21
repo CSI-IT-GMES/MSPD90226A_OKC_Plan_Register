@@ -114,7 +114,7 @@ namespace CSI.GMES.PD
                 {
                     DataTable _dtSource = GetData("Q_CONFIRM");
 
-                    if(_dtSource != null & _dtSource.Rows.Count > 0)
+                    if(_dtSource != null && _dtSource.Rows.Count > 0)
                     {
                         DataTable _dtContent = _dtSource.Select("CS_SIZE <> 'G-TOTAL'", "MLINE_CD, INPUT_PRIO, STYLE_CD, GRP_NO").CopyToDataTable();
                         DataTable _dtHead = _dtSource.Select("CS_SIZE = 'G-TOTAL'", "ORD").CopyToDataTable();
