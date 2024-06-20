@@ -48,7 +48,7 @@ namespace CSI.GMES.PD
             AddButton = false;
             DeleteRowButton = false;
             SaveButton = true;
-            DeleteButton = false;
+            DeleteButton = true;
             PreviewButton = false;
             PrintButton = false;
 
@@ -56,7 +56,8 @@ namespace CSI.GMES.PD
             cboAssDate.EditValue = DateTime.Now.ToString();
             gvwMain.OptionsSelection.MultiSelect = true;
             panTop.BackColor = Color.FromArgb(240, 240, 240);
-
+            this.lblSave.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSave.ForeColor = System.Drawing.Color.White;
             InitCombobox();
 
             _firstLoad = false;
@@ -151,7 +152,45 @@ namespace CSI.GMES.PD
             _dtSelected.Columns.Add("PFC_PART_NO", typeof(String));
             _dtSelected.Columns.Add("DIR_QTY", typeof(String));
         }
+        public override void DeleteClick()
+        {
+            base.DeleteClick();
+            try
+            {
+                DialogResult dlr;
 
+                //string _machine = string.IsNullOrEmpty(cboMachine.EditValue.ToString()) ? "" : cboMachine.EditValue.ToString();
+
+                string assy_ymd_tmp = cboAssDate.yyyymmdd;
+                string assy_ymd = assy_ymd_tmp.Substring(0, 4) + "-" + assy_ymd_tmp.Substring(4, 2) + "-" + assy_ymd_tmp.Substring(6, 2);
+
+                dlr = MessageBox.Show("Bạn có muốn delete kế hoạch ngày assembly:" + assy_ymd + " không?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dlr == DialogResult.Yes)
+                {
+                    bool result = SaveData("Q_DELETE");
+                    if (result)
+                    {
+                        MessageBoxW("Delete successfully!", IconType.Information);
+                        QueryClick();
+                    }
+                    else
+                    {
+                        MessageBoxW("Delete failed!", IconType.Warning);
+                    }
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+          
+
+        }
+       
+       
         public override void SaveClick()
         {
             try
@@ -1100,50 +1139,85 @@ namespace CSI.GMES.PD
             {
                 bool _result = true;
                 DataTable dtData = null;
+                DataTable dtData1 = null;
+
                 P_MSPD90226A_S proc = new P_MSPD90226A_S();
-                string machineName = $"{SessionInfo.UserName}|{ Environment.MachineName}|{GetIPAddress()}";
+                //string machineName = $"{SessionInfo.UserName}|{ Environment.MachineName}|{GetIPAddress()}";
+                string machineName = $"{SessionInfo.UserName}";
                 int iUpdate = 0, iCount = 0;
                 frmSplash.Show();
-
-                for (int iRow = 0; iRow < _dtSelected.Rows.Count; iRow++)
+                if (_type == "Q_SAVE")
                 {
-                    iUpdate++;
-                    dtData = proc.SetParamData(dtData,
-                                              _type,
-                                              cboFactory.EditValue.ToString(),
-                                              cboPlant.EditValue.ToString(),
-                                              cboLine.EditValue.ToString(),
-                                              _dtSelected.Rows[iRow]["MLINE_CD"].ToString(),
-                                              cboWorkDate.yyyymmdd,
-                                              cboAssDate.yyyymmdd,
-                                              cboMachine.EditValue.ToString(),
-                                              _dtSelected.Rows[iRow]["INPUT_PRIO"].ToString(),
-                                              _dtSelected.Rows[iRow]["STYLE_CD"].ToString().Replace("-", ""),
-                                              _dtSelected.Rows[iRow]["PFC_PART_NO"].ToString(),
-                                              _dtSelected.Rows[iRow]["CS_SIZE"].ToString(),
-                                              _dtSelected.Rows[iRow]["DIR_QTY"].ToString(),
-                                              machineName,
-                                              "CSI.GMES.PD.MSPD90226A_S");
-
-                    if (CommonProcessSave(dtData, proc.ProcName, proc.GetParamInfo(), grdMain))
+                    for (int iRow = 0; iRow < _dtSelected.Rows.Count; iRow++)
                     {
-                        dtData = null;
-                        iCount++;
+                        iUpdate++;
+                        dtData = proc.SetParamData(dtData,
+                                                  _type,
+                                                  cboFactory.EditValue.ToString(),
+                                                  cboPlant.EditValue.ToString(),
+                                                  cboLine.EditValue.ToString(),
+                                                  _dtSelected.Rows[iRow]["MLINE_CD"].ToString(),
+                                                  cboWorkDate.yyyymmdd,
+                                                  cboAssDate.yyyymmdd,
+                                                  cboMachine.EditValue.ToString(),
+                                                  _dtSelected.Rows[iRow]["INPUT_PRIO"].ToString(),
+                                                  _dtSelected.Rows[iRow]["STYLE_CD"].ToString().Replace("-", ""),
+                                                  _dtSelected.Rows[iRow]["PFC_PART_NO"].ToString(),
+                                                  _dtSelected.Rows[iRow]["CS_SIZE"].ToString(),
+                                                  _dtSelected.Rows[iRow]["DIR_QTY"].ToString(),
+                                                  machineName,
+                                                  "CSI.GMES.PD.MSPD90226A_S");
+
+                        if (CommonProcessSave(dtData, proc.ProcName, proc.GetParamInfo(), grdMain))
+                        {
+                            dtData = null;
+                            iCount++;
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    if (iUpdate == iCount)
+                    {
+                        _result = true;
                     }
                     else
                     {
-                        break;
+                        _result = false;
                     }
                 }
+                else if (_type == "Q_DELETE")
+                {
+                    dtData1 = proc.SetParamData(dtData1,
+                                                  _type,
+                                                  cboFactory.EditValue.ToString(),
+                                                  cboPlant.EditValue.ToString(),
+                                                  cboLine.EditValue.ToString(),
+                                                   "",
+                                                  cboWorkDate.yyyymmdd,
+                                                  cboAssDate.yyyymmdd,
+                                                  cboMachine.EditValue.ToString(),
+                                                  "",
+                                                  "",
+                                                  "",
+                                                  "",
+                                                  "",
+                                                  machineName,
+                                                 "CSI.GMES.PD.MSPD90226A_S");
 
-                if (iUpdate == iCount)
-                {
-                    _result = true;
-                }
-                else
-                {
-                    _result = false;
-                }
+                    if (CommonProcessSave(dtData1, proc.ProcName, proc.GetParamInfo(), grdMain))
+                    {
+                        dtData1 = null;
+                        _result = true;
+                    }
+                    else
+                    {
+                        _result = false;
+                    }    
+                   
+                }    
 
                 frmSplash.Close();
                 return _result;
@@ -1284,7 +1358,7 @@ namespace CSI.GMES.PD
                 lbPart.Visible = true;
                 cboStyle.Width = 130;
                 lblSave.Visible = true;
-                lblSelect.Visible = true;
+               // lblSelect.Visible = true;
                 lblAssDate.Visible = true;
                 cboAssDate.Visible = true;
 

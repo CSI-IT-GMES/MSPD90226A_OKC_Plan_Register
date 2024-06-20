@@ -49,7 +49,6 @@
             this.cboMachine = new JPlatform.Client.Controls6.LookUpEditEx();
             this.lblLine = new JPlatform.Client.Controls6.LabelEx();
             this.cboLine = new JPlatform.Client.Controls6.LookUpEditEx();
-            this.lblSave = new System.Windows.Forms.Label();
             this.lbFactory = new JPlatform.Client.Controls6.LabelEx();
             this.cboFactory = new JPlatform.Client.Controls6.LookUpEditEx();
             this.lblAssDate = new JPlatform.Client.Controls6.LabelEx();
@@ -87,6 +86,7 @@
             this.repositoryItemDateEditEx3 = new JPlatform.Client.Controls6.RepositoryItemDateEditEx();
             this.repositoryItemCheckEditEx1 = new JPlatform.Client.Controls6.RepositoryItemCheckEditEx();
             this.gridViewEx1 = new JPlatform.Client.Controls6.GridViewEx();
+            this.lblSave = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.FormMessages)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoemComboInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BaseTextEditEx.Properties)).BeginInit();
@@ -191,6 +191,7 @@
             this.lblSelect.TabIndex = 570;
             this.lblSelect.Text = "Selected";
             this.lblSelect.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblSelect.Visible = false;
             // 
             // chkcboPart
             // 
@@ -341,20 +342,6 @@
             this.cboLine.Size = new System.Drawing.Size(130, 25);
             this.cboLine.TabIndex = 557;
             this.cboLine.EditValueChanged += new System.EventHandler(this.cboLine_EditValueChanged);
-            // 
-            // lblSave
-            // 
-            this.lblSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSave.BackColor = System.Drawing.Color.Green;
-            this.lblSave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSave.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSave.ForeColor = System.Drawing.Color.White;
-            this.lblSave.Location = new System.Drawing.Point(1189, 70);
-            this.lblSave.Name = "lblSave";
-            this.lblSave.Size = new System.Drawing.Size(130, 25);
-            this.lblSave.TabIndex = 556;
-            this.lblSave.Text = "Saved";
-            this.lblSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbFactory
             // 
@@ -870,6 +857,20 @@
             this.gridViewEx1.GridControl = this.grdConfirm;
             this.gridViewEx1.Name = "gridViewEx1";
             // 
+            // lblSave
+            // 
+            this.lblSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSave.BackColor = System.Drawing.Color.Green;
+            this.lblSave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSave.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSave.ForeColor = System.Drawing.Color.White;
+            this.lblSave.Location = new System.Drawing.Point(1195, 70);
+            this.lblSave.Name = "lblSave";
+            this.lblSave.Size = new System.Drawing.Size(130, 25);
+            this.lblSave.TabIndex = 556;
+            this.lblSave.Text = "Plan Created";
+            this.lblSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MSPD90226A
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -949,7 +950,6 @@
         private JPlatform.Client.Controls6.DateEditEx cboAssDate;
         private JPlatform.Client.Controls6.LabelEx lbFactory;
         private JPlatform.Client.Controls6.LookUpEditEx cboFactory;
-        private System.Windows.Forms.Label lblSave;
         private System.Windows.Forms.Panel pnMain;
         private JPlatform.Client.Controls6.LabelEx lbPart;
         private JPlatform.Client.Controls6.LookUpEditEx cboStyle;
@@ -989,6 +989,7 @@
         private JPlatform.Client.Controls6.RepositoryItemDateEditEx repositoryItemDateEditEx3;
         private JPlatform.Client.Controls6.RepositoryItemCheckEditEx repositoryItemCheckEditEx1;
         private JPlatform.Client.Controls6.GridViewEx gridViewEx1;
+        private System.Windows.Forms.Label lblSave;
     }
 }
 
