@@ -1175,9 +1175,10 @@ namespace CSI.GMES.PD
                         }
                         else
                         {
-                            break;
+                            // break;
                         }
                     }
+                  
 
                     if (iUpdate == iCount)
                     {
