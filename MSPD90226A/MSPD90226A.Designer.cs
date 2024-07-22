@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MSPD90226A));
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject9 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject10 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject11 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject12 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panTop = new JPlatform.Client.Controls6.PanelEx();
             this.lblSelect = new System.Windows.Forms.Label();
             this.chkcboPart = new DevExpress.XtraEditors.CheckedComboBoxEdit();
@@ -49,6 +49,7 @@
             this.cboMachine = new JPlatform.Client.Controls6.LookUpEditEx();
             this.lblLine = new JPlatform.Client.Controls6.LabelEx();
             this.cboLine = new JPlatform.Client.Controls6.LookUpEditEx();
+            this.lblSave = new System.Windows.Forms.Label();
             this.lbFactory = new JPlatform.Client.Controls6.LabelEx();
             this.cboFactory = new JPlatform.Client.Controls6.LookUpEditEx();
             this.lblAssDate = new JPlatform.Client.Controls6.LabelEx();
@@ -86,7 +87,6 @@
             this.repositoryItemDateEditEx3 = new JPlatform.Client.Controls6.RepositoryItemDateEditEx();
             this.repositoryItemCheckEditEx1 = new JPlatform.Client.Controls6.RepositoryItemCheckEditEx();
             this.gridViewEx1 = new JPlatform.Client.Controls6.GridViewEx();
-            this.lblSave = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.FormMessages)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FoemComboInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BaseTextEditEx.Properties)).BeginInit();
@@ -185,7 +185,7 @@
             this.lblSelect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblSelect.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSelect.ForeColor = System.Drawing.Color.Black;
-            this.lblSelect.Location = new System.Drawing.Point(1059, 70);
+            this.lblSelect.Location = new System.Drawing.Point(1065, 70);
             this.lblSelect.Name = "lblSelect";
             this.lblSelect.Size = new System.Drawing.Size(130, 25);
             this.lblSelect.TabIndex = 570;
@@ -343,6 +343,20 @@
             this.cboLine.TabIndex = 557;
             this.cboLine.EditValueChanged += new System.EventHandler(this.cboLine_EditValueChanged);
             // 
+            // lblSave
+            // 
+            this.lblSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSave.BackColor = System.Drawing.Color.Green;
+            this.lblSave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblSave.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSave.ForeColor = System.Drawing.Color.White;
+            this.lblSave.Location = new System.Drawing.Point(1195, 70);
+            this.lblSave.Name = "lblSave";
+            this.lblSave.Size = new System.Drawing.Size(130, 25);
+            this.lblSave.TabIndex = 556;
+            this.lblSave.Text = "Plan Created";
+            this.lblSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // lbFactory
             // 
             this.lbFactory.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
@@ -401,7 +415,7 @@
             this.cboAssDate.Properties.AppearanceDropDown.Options.UseFont = true;
             this.cboAssDate.Properties.BeforeEditValue = null;
             this.cboAssDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 20, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("resource.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject9, serializableAppearanceObject10, serializableAppearanceObject11, serializableAppearanceObject12, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 20, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("resource.Buttons"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, true)});
             this.cboAssDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cboAssDate.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
@@ -468,7 +482,7 @@
             this.cboWorkDate.Properties.AppearanceDropDown.Options.UseFont = true;
             this.cboWorkDate.Properties.BeforeEditValue = new System.DateTime(2022, 8, 1, 15, 33, 39, 547);
             this.cboWorkDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 20, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("resource.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", 20, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, ((System.Drawing.Image)(resources.GetObject("resource.Buttons1"))), new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "", null, null, true)});
             this.cboWorkDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cboWorkDate.Properties.LookAndFeel.SkinName = "Office 2010 Blue";
@@ -856,20 +870,6 @@
             this.gridViewEx1.ActionMode = JPlatform.Client.Controls6.ActionMode.View;
             this.gridViewEx1.GridControl = this.grdConfirm;
             this.gridViewEx1.Name = "gridViewEx1";
-            // 
-            // lblSave
-            // 
-            this.lblSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSave.BackColor = System.Drawing.Color.Green;
-            this.lblSave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblSave.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSave.ForeColor = System.Drawing.Color.White;
-            this.lblSave.Location = new System.Drawing.Point(1195, 70);
-            this.lblSave.Name = "lblSave";
-            this.lblSave.Size = new System.Drawing.Size(130, 25);
-            this.lblSave.TabIndex = 556;
-            this.lblSave.Text = "Plan Created";
-            this.lblSave.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MSPD90226A
             // 

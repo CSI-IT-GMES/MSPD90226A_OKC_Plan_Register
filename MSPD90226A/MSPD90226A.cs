@@ -1405,7 +1405,7 @@ namespace CSI.GMES.PD
                 _ParamInfo.Add(new ParamInfo("@ARG_ASS_DATE", "Varchar", 100, "Input", typeof(System.String)));
                 _ParamInfo.Add(new ParamInfo("@ARG_MACHINE", "Varchar", 100, "Input", typeof(System.String)));
                 _ParamInfo.Add(new ParamInfo("@ARG_HMS", "Varchar", 100, "Input", typeof(System.String)));
-                _ParamInfo.Add(new ParamInfo("@ARG_PART", "Varchar", 100, "Input", typeof(System.String)));
+                _ParamInfo.Add(new ParamInfo("@ARG_PART", "Varchar", 0, "Input", typeof(System.String)));
             }
             public DataTable SetParamData(DataTable dataTable,
                                         System.String ARG_WORK_TYPE,
