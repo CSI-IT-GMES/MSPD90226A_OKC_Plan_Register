@@ -208,11 +208,11 @@ namespace CSI.GMES.PD
                     return;
                 }
 
-                if (string.IsNullOrEmpty(_machine))
-                {
-                    MessageBox.Show("Mã máy không được trống!!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+                //if (string.IsNullOrEmpty(_machine))
+                //{
+                //    MessageBox.Show("Mã máy không được trống!!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //    return;
+                //}
 
                 if (string.IsNullOrEmpty(_part))
                 {

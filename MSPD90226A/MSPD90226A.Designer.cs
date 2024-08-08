@@ -286,16 +286,17 @@
             this.lblMachine.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.lblMachine.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMachine.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lblMachine.Location = new System.Drawing.Point(459, 37);
+            this.lblMachine.Location = new System.Drawing.Point(676, 66);
             this.lblMachine.Name = "lblMachine";
             this.lblMachine.Size = new System.Drawing.Size(70, 25);
             this.lblMachine.TabIndex = 560;
             this.lblMachine.Text = "Machine";
+            this.lblMachine.Visible = false;
             // 
             // cboMachine
             // 
             this.cboMachine.ControlValue = null;
-            this.cboMachine.Location = new System.Drawing.Point(530, 37);
+            this.cboMachine.Location = new System.Drawing.Point(747, 66);
             this.cboMachine.Name = "cboMachine";
             this.cboMachine.Properties.AddEmptyRow = false;
             this.cboMachine.Properties.AllowBlank = false;
@@ -310,6 +311,7 @@
             this.cboMachine.Properties.WordText = "FA_WC_CD";
             this.cboMachine.Size = new System.Drawing.Size(130, 25);
             this.cboMachine.TabIndex = 559;
+            this.cboMachine.Visible = false;
             this.cboMachine.EditValueChanged += new System.EventHandler(this.cboMachine_EditValueChanged);
             // 
             // lblLine
