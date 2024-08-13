@@ -202,6 +202,16 @@ namespace CSI.GMES.PD
                 string _hms = string.IsNullOrEmpty(cboHMS.EditValue.ToString()) ? "" : cboHMS.EditValue.ToString();
                 string _part = chkcboPart.EditValue == null ? "" : chkcboPart.EditValue.ToString().Replace(" ", "");
 
+                DataTable _dtSource = GetData("Q_CHECK_SAVE");
+
+                if(_dtSource != null && _dtSource.Rows.Count > 0)
+                {
+                    string _work_date = _dtSource.Rows[0]["WO_YMD"].ToString();
+
+                    MessageBox.Show("Assembly Date này đã confirm vào ngày " + _work_date + "!!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (string.IsNullOrEmpty(_style))
                 {
                     MessageBox.Show("Mã hàng không được trống!!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
