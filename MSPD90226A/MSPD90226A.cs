@@ -58,9 +58,21 @@ namespace CSI.GMES.PD
             panTop.BackColor = Color.FromArgb(240, 240, 240);
             this.lblSave.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSave.ForeColor = System.Drawing.Color.White;
+
+            DataTable dtf = Get_Data_Combobox("Q_PREV_DATE", "");
+            if (dtf != null && dtf.Rows.Count > 0)
+            {
+                cboWorkDate.EditValue = dtf.Rows[0]["YMD"].ToString();
+            }
+
+            lblDesc.ForeColor = Color.FromArgb(0, 104, 140);
+            lblDesc.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+
             InitCombobox();
 
             _firstLoad = false;
+            cboWorkDate.Enabled = false;
+            lblDesc.Visible = true;
         }
 
         #region [Start Button Event Code By UIBuilder]
@@ -640,6 +652,15 @@ namespace CSI.GMES.PD
 
                 if (_type.Equals("Q_PART"))
                 {
+                    DataTable _dtSource = GetData("Q_CHECK_SAVE");
+                    lblDesc.Text = "";
+
+                    if (_dtSource != null && _dtSource.Rows.Count > 0)
+                    {
+                        string _work_date = _dtSource.Rows[0]["WO_YMD"].ToString();
+                        lblDesc.Text = "Status: Assembly Date này đã được confirm - Work Date: " + _work_date;
+                    }
+
                     chkcboPart.Properties.Items.Clear();
                     chkcboPart.Properties.DataSource = null;
                     if (dt == null) return;
@@ -923,6 +944,12 @@ namespace CSI.GMES.PD
         {
             if (!_firstLoad)
             {
+                DataTable dtf = Get_Data_Combobox("Q_PREV_DATE", "");
+                if (dtf != null && dtf.Rows.Count > 0)
+                {
+                    cboWorkDate.EditValue = dtf.Rows[0]["YMD"].ToString();
+                }
+
                 LoadDataCbo(cboStyle, "Style Name", "Q_STYLE");
                 LoadDataCbo(null, "Part", "Q_PART");
             }
@@ -958,6 +985,24 @@ namespace CSI.GMES.PD
                 if (_tab == 1)
                 {
                     LoadDataCbo(cboStyle, "Style Name", "Q_STYLE_ALL");
+                }
+            }
+        }
+
+        private void cboHMS_EditValueChanged(object sender, EventArgs e)
+        {
+            if (!_firstLoad)
+            {
+                if (_tab == 0)
+                {
+                    DataTable _dtSource = GetData("Q_CHECK_SAVE");
+                    lblDesc.Text = "";
+
+                    if (_dtSource != null && _dtSource.Rows.Count > 0)
+                    {
+                        string _work_date = _dtSource.Rows[0]["WO_YMD"].ToString();
+                        lblDesc.Text = "Status: Assembly Date này đã được confirm - Work Date: " + _work_date;
+                    }
                 }
             }
         }
@@ -1340,7 +1385,43 @@ namespace CSI.GMES.PD
         {
             _tab = tabControl.SelectedTabPageIndex;
 
-            if(_tab == 1)
+            if (_tab == 0)
+            {
+                chkcboPart.Visible = true;
+                lbPart.Visible = true;
+                cboStyle.Width = 347;
+                lblSave.Visible = true;
+                // lblSelect.Visible = true;
+                lblAssDate.Visible = true;
+                cboAssDate.Visible = true;
+
+                cboHMS.Location = new Point(510, 37);
+                lblHMS.Location = new Point(465, 37);
+
+                lblStyle.Location = new Point(33, 68);
+                cboStyle.Location = new Point(112, 68);
+
+                lblPlant.Location = new Point(280, 7);
+                cboPlant.Location = new Point(329, 7);
+                lblLine.Location = new Point(469, 7);
+                cboLine.Location = new Point(510, 7);
+                lblMachine.Location = new Point(459, 37);
+                cboMachine.Location = new Point(530, 37);
+
+                lbPart.Location = new Point(465, 68);
+                chkcboPart.Location = new Point(511, 67);
+                lbFactory.Location = new Point(50, 7);
+                cboFactory.Location = new Point(114, 7);
+                lbDateF.Location = new Point(249, 37);
+                cboWorkDate.Location = new Point(329, 37);
+                lblAssDate.Location = new Point(7, 37);
+                cboAssDate.Location = new Point(113, 37);
+
+                cboWorkDate.Enabled = false;
+                lblDesc.Visible = true;
+                lblDesc.Text = "";
+            }
+            else if (_tab == 1)
             {
                 chkcboPart.Visible = false;
                 lbPart.Visible = false;
@@ -1353,7 +1434,7 @@ namespace CSI.GMES.PD
                 cboHMS.Location = new Point(286, 37);
                 lblHMS.Location = new Point(222, 37);
 
-                lblStyle.Location = new Point(22, 69);
+                lblStyle.Location = new Point(7, 69);
                 cboStyle.Location = new Point(87, 69);
 
                 lblPlant.Location = new Point(237, 7);
@@ -1362,29 +1443,15 @@ namespace CSI.GMES.PD
                 cboLine.Location = new Point(490, 7);
                 lblMachine.Location = new Point(419, 37);
                 cboMachine.Location = new Point(490, 37);
-            }
-            else if (_tab == 0)
-            {
-                chkcboPart.Visible = true;
-                lbPart.Visible = true;
-                cboStyle.Width = 130;
-                lblSave.Visible = true;
-               // lblSelect.Visible = true;
-                lblAssDate.Visible = true;
-                cboAssDate.Visible = true;
 
-                cboHMS.Location = new Point(87, 69);
-                lblHMS.Location = new Point(22, 69);
+                lbFactory.Location = new Point(22, 7);
+                cboFactory.Location = new Point(86, 7);
+                lbDateF.Location = new Point(6, 37);
+                cboWorkDate.Location = new Point(86, 37);
 
-                lblStyle.Location = new Point(223, 68);
-                cboStyle.Location = new Point(326, 68);
-
-                lblPlant.Location = new Point(277, 7);
-                cboPlant.Location = new Point(326, 7);
-                lblLine.Location = new Point(489, 7);
-                cboLine.Location = new Point(530, 7);
-                lblMachine.Location = new Point(459, 37);
-                cboMachine.Location = new Point(530, 37);
+                cboWorkDate.Enabled = true;
+                lblDesc.Visible = false;
+                lblDesc.Text = "";
             }
 
             _firstLoad = true;

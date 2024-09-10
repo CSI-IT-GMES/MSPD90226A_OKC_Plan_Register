@@ -38,6 +38,7 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
             this.panTop = new JPlatform.Client.Controls6.PanelEx();
+            this.lblDesc = new JPlatform.Client.Controls6.LabelEx();
             this.lblSelect = new System.Windows.Forms.Label();
             this.chkcboPart = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             this.lbPart = new JPlatform.Client.Controls6.LabelEx();
@@ -151,6 +152,7 @@
             // panTop
             // 
             this.panTop.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panTop.Controls.Add(this.lblDesc);
             this.panTop.Controls.Add(this.lblSelect);
             this.panTop.Controls.Add(this.chkcboPart);
             this.panTop.Controls.Add(this.lbPart);
@@ -178,6 +180,18 @@
             this.panTop.Size = new System.Drawing.Size(1329, 105);
             this.panTop.TabIndex = 25;
             // 
+            // lblDesc
+            // 
+            this.lblDesc.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.lblDesc.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
+            this.lblDesc.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.lblDesc.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.lblDesc.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lblDesc.Location = new System.Drawing.Point(658, 68);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(537, 25);
+            this.lblDesc.TabIndex = 572;
+            // 
             // lblSelect
             // 
             this.lblSelect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -196,7 +210,7 @@
             // chkcboPart
             // 
             this.chkcboPart.EditValue = "";
-            this.chkcboPart.Location = new System.Drawing.Point(531, 66);
+            this.chkcboPart.Location = new System.Drawing.Point(511, 67);
             this.chkcboPart.Name = "chkcboPart";
             this.chkcboPart.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.chkcboPart.Properties.Appearance.BackColor = System.Drawing.Color.MistyRose;
@@ -214,7 +228,7 @@
             this.lbPart.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.lbPart.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lbPart.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lbPart.Location = new System.Drawing.Point(485, 67);
+            this.lbPart.Location = new System.Drawing.Point(465, 68);
             this.lbPart.Name = "lbPart";
             this.lbPart.Size = new System.Drawing.Size(44, 25);
             this.lbPart.TabIndex = 566;
@@ -223,7 +237,7 @@
             // cboStyle
             // 
             this.cboStyle.ControlValue = null;
-            this.cboStyle.Location = new System.Drawing.Point(326, 68);
+            this.cboStyle.Location = new System.Drawing.Point(112, 68);
             this.cboStyle.Name = "cboStyle";
             this.cboStyle.Properties.AddEmptyRow = false;
             this.cboStyle.Properties.AllowBlank = false;
@@ -236,7 +250,7 @@
             this.cboStyle.Properties.ShowCodeColumn = false;
             this.cboStyle.Properties.WordID = "W2018061910540582403";
             this.cboStyle.Properties.WordText = "FA_WC_CD";
-            this.cboStyle.Size = new System.Drawing.Size(130, 25);
+            this.cboStyle.Size = new System.Drawing.Size(347, 25);
             this.cboStyle.TabIndex = 564;
             this.cboStyle.EditValueChanged += new System.EventHandler(this.cboStyle_EditValueChanged);
             // 
@@ -245,16 +259,16 @@
             this.lblStyle.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.lblStyle.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblStyle.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lblStyle.Location = new System.Drawing.Point(223, 68);
+            this.lblStyle.Location = new System.Drawing.Point(33, 68);
             this.lblStyle.Name = "lblStyle";
-            this.lblStyle.Size = new System.Drawing.Size(102, 25);
+            this.lblStyle.Size = new System.Drawing.Size(78, 25);
             this.lblStyle.TabIndex = 563;
             this.lblStyle.Text = "Style Code";
             // 
             // cboHMS
             // 
             this.cboHMS.ControlValue = null;
-            this.cboHMS.Location = new System.Drawing.Point(87, 69);
+            this.cboHMS.Location = new System.Drawing.Point(510, 37);
             this.cboHMS.Name = "cboHMS";
             this.cboHMS.Properties.AddEmptyRow = false;
             this.cboHMS.Properties.AllowBlank = false;
@@ -269,15 +283,16 @@
             this.cboHMS.Properties.WordText = "FA_WC_CD";
             this.cboHMS.Size = new System.Drawing.Size(130, 25);
             this.cboHMS.TabIndex = 562;
+            this.cboHMS.EditValueChanged += new System.EventHandler(this.cboHMS_EditValueChanged);
             // 
             // lblHMS
             // 
             this.lblHMS.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.lblHMS.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblHMS.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lblHMS.Location = new System.Drawing.Point(22, 69);
+            this.lblHMS.Location = new System.Drawing.Point(465, 37);
             this.lblHMS.Name = "lblHMS";
-            this.lblHMS.Size = new System.Drawing.Size(63, 25);
+            this.lblHMS.Size = new System.Drawing.Size(44, 25);
             this.lblHMS.TabIndex = 561;
             this.lblHMS.Text = "Hour";
             // 
@@ -286,7 +301,7 @@
             this.lblMachine.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.lblMachine.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblMachine.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lblMachine.Location = new System.Drawing.Point(676, 66);
+            this.lblMachine.Location = new System.Drawing.Point(646, 37);
             this.lblMachine.Name = "lblMachine";
             this.lblMachine.Size = new System.Drawing.Size(70, 25);
             this.lblMachine.TabIndex = 560;
@@ -296,7 +311,7 @@
             // cboMachine
             // 
             this.cboMachine.ControlValue = null;
-            this.cboMachine.Location = new System.Drawing.Point(747, 66);
+            this.cboMachine.Location = new System.Drawing.Point(717, 37);
             this.cboMachine.Name = "cboMachine";
             this.cboMachine.Properties.AddEmptyRow = false;
             this.cboMachine.Properties.AllowBlank = false;
@@ -319,7 +334,7 @@
             this.lblLine.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.lblLine.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblLine.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lblLine.Location = new System.Drawing.Point(489, 7);
+            this.lblLine.Location = new System.Drawing.Point(469, 7);
             this.lblLine.Name = "lblLine";
             this.lblLine.Size = new System.Drawing.Size(40, 25);
             this.lblLine.TabIndex = 558;
@@ -328,7 +343,7 @@
             // cboLine
             // 
             this.cboLine.ControlValue = null;
-            this.cboLine.Location = new System.Drawing.Point(530, 7);
+            this.cboLine.Location = new System.Drawing.Point(510, 7);
             this.cboLine.Name = "cboLine";
             this.cboLine.Properties.AddEmptyRow = false;
             this.cboLine.Properties.AllowBlank = false;
@@ -364,7 +379,7 @@
             this.lbFactory.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.lbFactory.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lbFactory.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lbFactory.Location = new System.Drawing.Point(22, 7);
+            this.lbFactory.Location = new System.Drawing.Point(50, 7);
             this.lbFactory.Name = "lbFactory";
             this.lbFactory.Size = new System.Drawing.Size(63, 25);
             this.lbFactory.TabIndex = 552;
@@ -373,7 +388,7 @@
             // cboFactory
             // 
             this.cboFactory.ControlValue = null;
-            this.cboFactory.Location = new System.Drawing.Point(86, 7);
+            this.cboFactory.Location = new System.Drawing.Point(114, 7);
             this.cboFactory.Name = "cboFactory";
             this.cboFactory.Properties.AddEmptyRow = false;
             this.cboFactory.Properties.AllowBlank = false;
@@ -395,7 +410,7 @@
             this.lblAssDate.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.lblAssDate.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblAssDate.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lblAssDate.Location = new System.Drawing.Point(220, 37);
+            this.lblAssDate.Location = new System.Drawing.Point(7, 37);
             this.lblAssDate.Name = "lblAssDate";
             this.lblAssDate.Size = new System.Drawing.Size(105, 25);
             this.lblAssDate.TabIndex = 550;
@@ -406,7 +421,7 @@
             this.cboAssDate.ControlValue = new System.DateTime(2022, 8, 1, 15, 33, 39, 547);
             this.cboAssDate.DefaultValue = JPlatform.Client.Controls6.DateEditEx.DefaultValueType.Now;
             this.cboAssDate.EditValue = new System.DateTime(2022, 8, 1, 15, 33, 39, 547);
-            this.cboAssDate.Location = new System.Drawing.Point(326, 37);
+            this.cboAssDate.Location = new System.Drawing.Point(113, 37);
             this.cboAssDate.Name = "cboAssDate";
             this.cboAssDate.Properties.AllowBlank = false;
             this.cboAssDate.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
@@ -431,7 +446,7 @@
             this.lblPlant.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.lblPlant.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lblPlant.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lblPlant.Location = new System.Drawing.Point(277, 7);
+            this.lblPlant.Location = new System.Drawing.Point(280, 7);
             this.lblPlant.Name = "lblPlant";
             this.lblPlant.Size = new System.Drawing.Size(48, 25);
             this.lblPlant.TabIndex = 542;
@@ -440,7 +455,7 @@
             // cboPlant
             // 
             this.cboPlant.ControlValue = null;
-            this.cboPlant.Location = new System.Drawing.Point(326, 7);
+            this.cboPlant.Location = new System.Drawing.Point(329, 7);
             this.cboPlant.Name = "cboPlant";
             this.cboPlant.Properties.AddEmptyRow = false;
             this.cboPlant.Properties.AllowBlank = false;
@@ -462,7 +477,7 @@
             this.lbDateF.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
             this.lbDateF.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.lbDateF.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.lbDateF.Location = new System.Drawing.Point(6, 37);
+            this.lbDateF.Location = new System.Drawing.Point(249, 37);
             this.lbDateF.Name = "lbDateF";
             this.lbDateF.Size = new System.Drawing.Size(79, 25);
             this.lbDateF.TabIndex = 540;
@@ -473,7 +488,7 @@
             this.cboWorkDate.ControlValue = new System.DateTime(2022, 8, 1, 15, 33, 39, 547);
             this.cboWorkDate.DefaultValue = JPlatform.Client.Controls6.DateEditEx.DefaultValueType.Now;
             this.cboWorkDate.EditValue = new System.DateTime(2022, 8, 1, 15, 33, 39, 547);
-            this.cboWorkDate.Location = new System.Drawing.Point(86, 37);
+            this.cboWorkDate.Location = new System.Drawing.Point(329, 37);
             this.cboWorkDate.Name = "cboWorkDate";
             this.cboWorkDate.Properties.AllowBlank = false;
             this.cboWorkDate.Properties.Appearance.Font = new System.Drawing.Font("Calibri", 12F);
@@ -518,6 +533,7 @@
             this.tabControl.AppearancePage.Header.Options.UseFont = true;
             this.tabControl.AppearancePage.HeaderActive.Font = new System.Drawing.Font("Calibri", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.tabControl.AppearancePage.HeaderActive.Options.UseFont = true;
+            this.tabControl.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.LookAndFeel.SkinName = "VS2010";
@@ -992,6 +1008,7 @@
         private JPlatform.Client.Controls6.RepositoryItemCheckEditEx repositoryItemCheckEditEx1;
         private JPlatform.Client.Controls6.GridViewEx gridViewEx1;
         private System.Windows.Forms.Label lblSave;
+        private JPlatform.Client.Controls6.LabelEx lblDesc;
     }
 }
 
