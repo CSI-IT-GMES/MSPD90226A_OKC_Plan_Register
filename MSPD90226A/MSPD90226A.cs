@@ -1255,13 +1255,13 @@ namespace CSI.GMES.PD
                                                   cboWorkDate.yyyymmdd,
                                                   cboAssDate.yyyymmdd,
                                                   cboMachine.EditValue.ToString(),
-                                                  "",
-                                                  "",
-                                                  "",
+                                                  "",//HH
+                                                  cboStyle.EditValue.ToString(),
+                                                  chkcboPart.EditValue.ToString(),                                                
                                                   "",
                                                   "",
                                                   machineName,
-                                                 "CSI.GMES.PD.MSPD90226A_S");
+                                                 "CSI.GMES.PD.MSPD90226A_S"); ;
 
                     if (CommonProcessSave(dtData1, proc.ProcName, proc.GetParamInfo(), grdMain))
                     {
