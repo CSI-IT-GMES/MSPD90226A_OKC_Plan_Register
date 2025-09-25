@@ -22,6 +22,11 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
+using System.Globalization;
+using DevExpress.XtraGrid.Views.BandedGrid.ViewInfo;
+using System.Threading;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
+using System.Collections;
 
 
 namespace CSI.GMES.PD
@@ -223,6 +228,21 @@ namespace CSI.GMES.PD
                     MessageBox.Show("Assembly Date này đã confirm vào ngày " + _work_date + "!!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
+
+
+                DataTable dtSourceShopOrder = GetData("Q_CHECK_SHOPORDER");
+
+                if (dtSourceShopOrder != null && dtSourceShopOrder.Rows.Count > 0)
+                {
+                    string SO_STATUS = dtSourceShopOrder.Rows[0]["SO_STATUS"].ToString();
+                    if (SO_STATUS == "NOT_YET_CONFIRM_SO")
+                     {
+                        MessageBox.Show("Not yet confirm shop order from production secretary", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                     }
+                     
+                }
+
 
                 if (string.IsNullOrEmpty(_style))
                 {

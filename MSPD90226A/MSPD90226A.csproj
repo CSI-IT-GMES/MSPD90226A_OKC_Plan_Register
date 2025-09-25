@@ -56,7 +56,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AxInterop.RDVIEWER40Lib">
-      <HintPath>C:\JihooSoft\GMES_NEW_VJ\AxInterop.RDVIEWER40Lib.dll</HintPath>
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\AxInterop.RDVIEWER40Lib.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -71,32 +71,36 @@
     <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v15.2, Version=15.2.9.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Interop.RDVIEWER40Lib">
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\Interop.RDVIEWER40Lib.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="JPlatform.Client.BrowserControls6">
-      <HintPath>C:\JihooSoft\GMES_NEW_VJ\JPlatform.Client.BrowserControls6.dll</HintPath>
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\JPlatform.Client.BrowserControls6.dll</HintPath>
     </Reference>
     <Reference Include="JPlatform.Client.ChildForm6">
-      <HintPath>C:\JihooSoft\GMES_NEW_VJ\JPlatform.Client.ChildForm6.dll</HintPath>
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\JPlatform.Client.ChildForm6.dll</HintPath>
     </Reference>
     <Reference Include="JPlatform.Client.Controls6">
-      <HintPath>C:\JihooSoft\GMES_NEW_VJ\JPlatform.Client.Controls6.dll</HintPath>
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\JPlatform.Client.Controls6.dll</HintPath>
     </Reference>
     <Reference Include="JPlatform.Client.CSIGMESBaseform6">
-      <HintPath>C:\JihooSoft\GMES_NEW_VJ\JPlatform.Client.CSIGMESBaseform6.dll</HintPath>
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\JPlatform.Client.CSIGMESBaseform6.dll</HintPath>
     </Reference>
     <Reference Include="JPlatform.Client.JBaseForm6">
-      <HintPath>C:\JihooSoft\GMES_NEW_VJ\JPlatform.Client.JBaseForm6.dll</HintPath>
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\JPlatform.Client.JBaseForm6.dll</HintPath>
     </Reference>
     <Reference Include="JPlatform.Client.JERPBaseForm6">
-      <HintPath>C:\JihooSoft\GMES_NEW_VJ\JPlatform.Client.JERPBaseForm6.dll</HintPath>
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\JPlatform.Client.JERPBaseForm6.dll</HintPath>
     </Reference>
     <Reference Include="JPlatform.Client.Library6">
-      <HintPath>C:\JihooSoft\GMES_NEW_VJ\JPlatform.Client.Library6.dll</HintPath>
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\JPlatform.Client.Library6.dll</HintPath>
     </Reference>
     <Reference Include="JPlatform.Client.Login6">
-      <HintPath>C:\JihooSoft\GMES_NEW_VJ\JPlatform.Client.Login6.dll</HintPath>
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\JPlatform.Client.Login6.dll</HintPath>
     </Reference>
     <Reference Include="JPlatform.Client.LoginForm6_Base">
-      <HintPath>C:\JihooSoft\GMES_NEW_VJ\JPlatform.Client.LoginForm6_Base.dll</HintPath>
+      <HintPath>C:\JihooSoft\JBrowser6_GMES\JPlatform.Client.LoginForm6_Base.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
